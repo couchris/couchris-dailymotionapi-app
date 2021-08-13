@@ -1,0 +1,16 @@
+<div class = "video">
+<img class = "thumbnail" src="{{video['thumbnail_360_url']}}">
+<a href="https://www.dailymotion.com/video/{{video['id']}}" target="_blank">{{video['title']}}</a>
+<br><br>
+<img class = "avatar" src="{{video['owner.avatar_80_url']}}">
+<br>
+<p>{{video['owner.username']}}</p>
+<p>Dated Created: {{ video['created_time'] * 1000 | date }}</p>
+<p>Views: {{video['views_total']}}</p>
+<div *ngIf="result === 0">
+<button (click) = "addPlaylist()">Add to Playlist</button>
+</div>
+<div *ngIf="result === 1 && resultPl !== 1">
+  <button disabled ="true" >Already In Playlist</button>
+</div>
+</div>

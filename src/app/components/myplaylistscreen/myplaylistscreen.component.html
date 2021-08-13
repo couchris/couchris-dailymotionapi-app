@@ -1,0 +1,13 @@
+
+<p id="title">Your Playlist</p>
+<div class=empty *ngIf="!videos?.length">
+
+<p id="subtitle">There are no videos in your playlist.</p>
+
+</div>
+
+<div *ngIf="videos.length > 0">
+<button (click)="clear()">Clear Playlist</button>
+<app-listing [listOfVideos] = "videos" [result2] = "removeButtons(videos)"></app-listing>
+
+</div>
